@@ -1,117 +1,216 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/dummy_data.dart';
-import 'package:flutter_app/module/meal.dart';
-import 'package:flutter_app/screens/category_meals_screen.dart';
-import 'package:flutter_app/screens/filters_screen.dart';
-import 'package:flutter_app/screens/meal_detail_screen.dart';
-import 'package:flutter_app/screens/tabs_screen.dart';
+import 'package:carousel_pro/carousel_pro.dart';
+import 'package:flutter_app/components/products.dart';
+import 'package:flutter_app/pages/cart.dart';
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: HomePage(),
+  ));
 }
-
-class MyApp extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyAppState extends State<MyApp> {
-  Map<String,bool> _filters={
-    'gluten':false,
-    'lactose':false,
-    'vegan':false,
-    'vegetarian':false,
-  };
-
-  List<Meal> _avaliableMeals=DUMMY_MEALS; //this will store the meals in Dummy meals list in available meals
-  List<Meal> _favoritesMeals=[];
-
-    void _setFilters(Map<String,bool> _filtersData){
-       setState(() {
-         _filters=_filtersData; //this will update the values in _filters map
-
-         _avaliableMeals=DUMMY_MEALS.where((meal) { //this will filter all the meals in DummyMeals list
-           if(_filters['gluten'] && !meal.isGluttenFree){ //means that the gluten value in _filters=true but meal doesn't contain gluten
-                return false;
-           }
-           if(_filters['lactose'] && !meal.isLactoseFree){
-             return false;
-           }
-           if(_filters['vegan'] && !meal.isVegan){
-             return false;
-           }
-           if(_filters['vegetarian'] && !meal.isVegetarian){
-             return false;
-           }
-           return true;
-         }).toList();
-       });
-    }
-
-    void _toggleFavorites(String mealId){
-    final existingIndex= _favoritesMeals.indexWhere((meal) => meal.id==mealId); //this will return the index of object the satisfy the condition
-      if(existingIndex>=0){
-        setState(() {
-          _favoritesMeals.removeAt(existingIndex); //this will remove the meal if it's already in the favorites and the user click on add to favorites
-        });
-      }
-      else{
-        setState(() {
-          _favoritesMeals.add(DUMMY_MEALS.firstWhere((meal) => meal.id==mealId)); //this will add the meal to the favorites
-        });
-      }
-    }
-
-    bool _isMealFavorite(String id){ //this will check if the meal is already in the favorites meals or not
-      return _favoritesMeals.any((meal)=> meal.id==id);
-    }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        '/':(context) =>tabsScreen(_favoritesMeals),
-        CategoryMealsScreen.routename:(context) => CategoryMealsScreen(_avaliableMeals),
-        MealDetailScreen.routename:(context) => MealDetailScreen(_toggleFavorites,_isMealFavorite),
-        FiltersScreen.routeName:(context) => FiltersScreen(_setFilters,_filters),
-      },
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-        accentColor: Colors.amber,
-        canvasColor: Color.fromRGBO(255,254, 229, 1),
-        textTheme: ThemeData.light().textTheme.copyWith(
-          bodyText1: TextStyle(
-            color: Color.fromRGBO(20, 50, 50, 1),
-          ),
-          bodyText2: TextStyle(
-           color: Color.fromRGBO(20, 50, 50, 1),
-          ),
-          headline6: TextStyle(
-            fontSize: 24,
-            fontFamily: 'RobotoCondensed',
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-      //home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageState extends State<HomePage> {
+  String email="";
+  String password="";
+  final _formkey=GlobalKey<FormState>();
+   Widget image_carousel=Container(
+     height: 200,
+     child: Carousel(
+       dotBgColor: Colors.transparent,
+       boxFit: BoxFit.cover,
+       images: [
+         AssetImage('images/download.jpg'),
+         AssetImage('images/m1.jpg'),
+         AssetImage('images/w3.jpg'),
+         AssetImage('images/w4.jpg'),
+         AssetImage('images/m3.jpg'),
+       ],
+       autoplay: false,
+       // animationCurve: Curves.fastOutSlowIn,
+       // animationDuration: Duration(milliseconds: 1000),
+       dotSize: 4.0,
+       indicatorBgPadding: 2.0,
+     ),
+   );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Meal App'),
+        backgroundColor: Colors.blue,
+        title: Text('MoviesApp'),
+        actions: [
+          FlatButton.icon(
+            label: Text('Add film',style: TextStyle(fontSize: 15),),
+            icon: Icon(Icons.add,color: Colors.white),
+            onPressed: (){
+              showDialog(
+                context: context,
+                builder: (context){
+                  return AlertDialog(
+                    title: Text('Please confirm your email'),
+                    content: Form(
+                      key: _formkey,
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            decoration: InputDecoration(
+                              labelText: 'email',
+                            ),
+                            validator: (val)=>val!="hatemmadouh25@gmail.com"?'not allowed':null,
+                            onChanged: (val){
+                              setState(() {
+                                email=val;
+                              });
+                            },
+                          ),
+                          SizedBox(height: 20),
+                          TextFormField(
+                            decoration: InputDecoration(
+                              labelText: 'password',
+                            ),
+                            obscureText: true,
+                            validator: (val)=>val!="1234567890"?'not allowed':null,
+                            onChanged: (val){
+                              setState(() {
+                                password=val;
+                              });
+                            },
+                          ),
+                          RaisedButton(
+                            color: Colors.black,
+                              child: Text('Confirm',style: TextStyle(color: Colors.white),),
+                              onPressed: (){
+                              if(_formkey.currentState.validate()){
+                             //   Navigator.push(context, MaterialPageRoute(builder:(context)=>Addfilm());
+                              }
+                              }
+                          ),
+                        ],
+                      ),
+                    ),
+                    actions: [
+                      IconButton(
+                          icon: Icon(Icons.close),
+                          onPressed: (){
+                            Navigator.of(context).pop();
+                          }
+                      ),
+                    ],
+                  );
+                }
+              );
+              //Navigator.push(context, MaterialPageRoute(builder: (context)=>AddProducts()));
+            },
+          ),
+          IconButton(
+              icon: Icon(Icons.favorite,color: Colors.red),
+              onPressed:(){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Cart()));
+              }
+          ),
+        ],
+    ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+                accountName: Text('Vendor'),
+                accountEmail: Text('hatemmadouh25@gmail.com'),
+              currentAccountPicture: GestureDetector(
+                child:CircleAvatar(
+                  backgroundColor: Colors.grey,
+                  child: Icon(Icons.person,color: Colors.white,),
+                )
+              ),
+            ),
+            //body
+            ListTile(
+             title: Text('Home Page'),
+              leading: Icon(Icons.home,color: Colors.blue),
+              onTap: (){
+               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomePage()));
+              },
+            ),
+            ListTile(
+              title: Text('Favorites'),
+              leading: Icon(Icons.favorite,color: Colors.red,),
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Cart()));
+              },
+            ),
+            Divider(),
+            ListTile(
+              title: Text('About'),
+              leading: Icon(Icons.help,color: Colors.green),
+              onTap: (){
+                showDialog(
+                    context: context,
+                    builder: (context){
+                      return AlertDialog(
+                        title: Text('About us',style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),),
+                        content: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('this page is for booking movies online at any time,you can choose your seat and we have discounts every month,there are different kinda of films where you can choose from ,you can also save film you like to your favorites list from where you can watch it multiple times any time you want,you can also view the latest added films from notifications you get from the app after you created an email'),
+                            SizedBox(height: 80),
+                            Text('Copy Rights reserved for 2020-2021',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)
+                          ],
+                        ),
+                        actions: [
+                          IconButton(
+                              icon: Icon(Icons.close),
+                              onPressed: (){
+                                Navigator.of(context).pop();
+                              },
+                          ),
+                        ],
+                      );
+                    }
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.book_online,color: Colors.blue,),
+              title: Text('book film seat',style: TextStyle(fontSize: 20),),
+              onTap: (){},
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app,color: Colors.red,),
+              title: Text('Log out',style: TextStyle(fontSize: 20),),
+              onTap: (){},
+            ),
+          ],
+        ),
       ),
-      body:null,
+      body: ListView(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text('Top movies',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+          ),
+          //image carousel starts here
+          image_carousel,
+          Padding(
+              padding: EdgeInsets.all(8.0),
+                  ),
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Text('Recent Movies',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+          ),
+          //grid view starts here
+          Container(
+            height: 320.0,
+            child: Products(),
+          ),
+        ],
+      ),
     );
   }
 }
+
+
+
