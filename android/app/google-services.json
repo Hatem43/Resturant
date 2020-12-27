@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "296728549795",
+    "project_id": "cinemabooking-d1d6b",
+    "storage_bucket": "cinemabooking-d1d6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296728549795:android:a1ca3edfaba013027c2216",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296728549795-gruqtbl17de5b1rr2qf1rr7lnc32puef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS_DpwVSYdF85kc87mDUYy4NF07t125Ng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296728549795-gruqtbl17de5b1rr2qf1rr7lnc32puef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

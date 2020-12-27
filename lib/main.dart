@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:flutter_app/add_movie.dart';
 import 'package:flutter_app/components/products.dart';
 import 'package:flutter_app/pages/cart.dart';
 void main() {
@@ -85,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                               child: Text('Confirm',style: TextStyle(color: Colors.white),),
                               onPressed: (){
                               if(_formkey.currentState.validate()){
-                             //   Navigator.push(context, MaterialPageRoute(builder:(context)=>Addfilm());
+                              Navigator.push(context, MaterialPageRoute(builder:(context)=>Add_Movie()));
                               }
                               }
                           ),
