@@ -10,41 +10,29 @@ class Products extends StatefulWidget {
 class _ProductsState extends State<Products> {
   var product_list=[
     {
-      'name':'Wretched',
-      'picture':'images/products/e3.jpg',
+      'name':'Avengers',
+      'picture':'images/movie0.jpg',
        'seats':47,
         'price':85,
     },
     {
-      'name':'Mulan',
-      'picture':'images/products/e4.jpg',
+      'name':'Moon Light',
+      'picture':'images/movie1.jpg',
       'seats':47,
       'price':50,
     },
     {
-      'name':'Toystory',
-      'picture':'images/products/e5.jpg',
+      'name':'Joker',
+      'picture':'images/movie2.jpg',
        'seats':47,
        'price':53,
     },
     {
-      'name':'WakeUp',
-      'picture':'images/products/e6.jpg',
+      'name':'Beauty & Beast',
+      'picture':'images/movie4.jpg',
       'seats':47,
       'price':60,
-    },
-    {
-      'name':'Ryan',
-      'picture':'images/products/e7.jpg',
-      'seats':47,
-      'price':60,
-    },
-    {
-      'name':'GODfATHER',
-      'picture':'images/products/e8.jpg',
-       'seats':47,
-      'price':60,
-    },
+    },   
   ];
 
   @override
