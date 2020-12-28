@@ -18,7 +18,7 @@ class _Cart_productsState extends State<Cart_products> {
     },
     {
       'name':'ToyStory',
-      'picture':'images/products/e5.jpg',
+      'picture':'images/m3.jpg',
       'price':53,
       'hours':2,
       'seats':1,
