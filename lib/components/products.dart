@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_app/pages/main.dart';
 
 class Products extends StatefulWidget {
   @override
@@ -67,7 +67,7 @@ class Single_Film extends StatelessWidget {
         child: Material(
           child: InkWell(
             onTap: (){
-             // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FilmDetails()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CinemaPage()));
             },
             child: GridTile(
               child: Image.asset(film_picture,fit: BoxFit.cover,),
