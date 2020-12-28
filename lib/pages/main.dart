@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'registeration page.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -193,65 +192,65 @@ class DataFaker {
 
   fakeCinemas() {
     cinemas = [
-      new Cinema('Cinema House', 'assets/images/cinema0.jpg', '⭐⭐⭐', [
+      new Cinema('Cinema House', 'images/cinema0.jpg', '⭐⭐⭐', [
         Movie(
             'Avengers',
             'Avengers: Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. It is the direct sequel to Avengers: Infinity War (2018) and the 22nd film in the Marvel Cinematic Universe (MCU). The film was directed by Anthony and Joe Russo and written by Christopher Markus and Stephen McFeely, and features an ensemble cast including Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner, Don Cheadle, Paul Rudd, Brie Larson, Karen Gillan, Danai Gurira, Benedict Wong, Jon Favreau, Bradley Cooper, Gwyneth Paltrow, and Josh Brolin. In the film, the surviving members of the Avengers and their allies attempt to reverse the damage caused by Thanos in Infinity War.',
-            'assets/images/movie0.jpg'),
+            'images/movie0.jpg'),
         Movie(
             'Moon Light',
             'Moonlight is set in the impoverished Liberty City area of Miami, shown in brilliant, luminous colours, and takes place in three acts. In the first act, successful drug dealer Juan (played by Mahershala Ali) sees a young boy fleeing a group of boys threatening to beat him and follows the child into an abandoned apartment, into which he has locked himself for protection. The child (Alex Hibbert) refuses to speak but allows Juan to buy him a meal. Juan and his girlfriend, Teresa (Janelle Monáe), take him into their home, where the boy says that his name is Chiron and that he is called Little, but he refuses to say where he lives until the following morning. Juan returns him to his mother (Naomie Harris), a user of crack cocaine who is emotionally abusive to the child. Juan and Teresa become an alternate family for Chiron, who does not know how to fit in with the other boys in the neighbourhood, though a friend, Kevin (Jaden Piner), tries to teach him.',
-            'assets/images/movie1.jpg'),
+            'images/movie1.jpg'),
       ]),
-      new Cinema('IMAX', 'assets/images/cinema1.jpg', '⭐⭐⭐⭐', [
+      new Cinema('IMAX', 'images/cinema1.jpg', '⭐⭐⭐⭐', [
         Movie(
             'Avengers',
             'Avengers: Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. It is the direct sequel to Avengers: Infinity War (2018) and the 22nd film in the Marvel Cinematic Universe (MCU). The film was directed by Anthony and Joe Russo and written by Christopher Markus and Stephen McFeely, and features an ensemble cast including Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner, Don Cheadle, Paul Rudd, Brie Larson, Karen Gillan, Danai Gurira, Benedict Wong, Jon Favreau, Bradley Cooper, Gwyneth Paltrow, and Josh Brolin. In the film, the surviving members of the Avengers and their allies attempt to reverse the damage caused by Thanos in Infinity War.',
-            'assets/images/movie0.jpg'),
+            'images/movie0.jpg'),
         Movie(
             'Moon Light',
             'Moonlight is set in the impoverished Liberty City area of Miami, shown in brilliant, luminous colours, and takes place in three acts. In the first act, successful drug dealer Juan (played by Mahershala Ali) sees a young boy fleeing a group of boys threatening to beat him and follows the child into an abandoned apartment, into which he has locked himself for protection. The child (Alex Hibbert) refuses to speak but allows Juan to buy him a meal. Juan and his girlfriend, Teresa (Janelle Monáe), take him into their home, where the boy says that his name is Chiron and that he is called Little, but he refuses to say where he lives until the following morning. Juan returns him to his mother (Naomie Harris), a user of crack cocaine who is emotionally abusive to the child. Juan and Teresa become an alternate family for Chiron, who does not know how to fit in with the other boys in the neighbourhood, though a friend, Kevin (Jaden Piner), tries to teach him.',
-            'assets/images/movie1.jpg'),
+            'images/movie1.jpg'),
         Movie(
             'Joker',
             'In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.',
-            'assets/images/movie2.jpg'),
+            'images/movie2.jpg'),
       ]),
-      new Cinema('Century Cinema', 'assets/images/cinema2.jpg', '⭐⭐', [
+      new Cinema('Century Cinema', 'images/cinema3.jpg', '⭐⭐', [
         Movie(
             'Avengers',
             'Avengers: Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. It is the direct sequel to Avengers: Infinity War (2018) and the 22nd film in the Marvel Cinematic Universe (MCU). The film was directed by Anthony and Joe Russo and written by Christopher Markus and Stephen McFeely, and features an ensemble cast including Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner, Don Cheadle, Paul Rudd, Brie Larson, Karen Gillan, Danai Gurira, Benedict Wong, Jon Favreau, Bradley Cooper, Gwyneth Paltrow, and Josh Brolin. In the film, the surviving members of the Avengers and their allies attempt to reverse the damage caused by Thanos in Infinity War.',
-            'assets/images/movie0.jpg'),
+            'images/movie0.jpg'),
         Movie(
             'Moon Light',
             'Moonlight is set in the impoverished Liberty City area of Miami, shown in brilliant, luminous colours, and takes place in three acts. In the first act, successful drug dealer Juan (played by Mahershala Ali) sees a young boy fleeing a group of boys threatening to beat him and follows the child into an abandoned apartment, into which he has locked himself for protection. The child (Alex Hibbert) refuses to speak but allows Juan to buy him a meal. Juan and his girlfriend, Teresa (Janelle Monáe), take him into their home, where the boy says that his name is Chiron and that he is called Little, but he refuses to say where he lives until the following morning. Juan returns him to his mother (Naomie Harris), a user of crack cocaine who is emotionally abusive to the child. Juan and Teresa become an alternate family for Chiron, who does not know how to fit in with the other boys in the neighbourhood, though a friend, Kevin (Jaden Piner), tries to teach him.',
-            'assets/images/movie1.jpg'),
+            'images/movie1.jpg'),
         Movie(
             'Joker',
             'In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.',
-            'assets/images/movie2.jpg'),
+            'images/movie2.jpg'),
         Movie(
             'Drive',
             ' mysterious Hollywood stuntman and mechanic moonlights as a getaway driver and finds himself in trouble when he helps out his neighbor in this action drama.',
-            'assets/images/movie4.jpg'),
+            'images/movie3.jpg'),
       ]),
-      new Cinema('VOX', 'assets/images/cinema3.jpg', '⭐⭐⭐⭐⭐', [
+      new Cinema('VOX', 'images/cinema4.jpg', '⭐⭐⭐⭐⭐', [
         Movie(
             'Avengers',
             'Avengers: Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. It is the direct sequel to Avengers: Infinity War (2018) and the 22nd film in the Marvel Cinematic Universe (MCU). The film was directed by Anthony and Joe Russo and written by Christopher Markus and Stephen McFeely, and features an ensemble cast including Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner, Don Cheadle, Paul Rudd, Brie Larson, Karen Gillan, Danai Gurira, Benedict Wong, Jon Favreau, Bradley Cooper, Gwyneth Paltrow, and Josh Brolin. In the film, the surviving members of the Avengers and their allies attempt to reverse the damage caused by Thanos in Infinity War.',
-            'assets/images/movie0.jpg'),
+            'images/movie0.jpg'),
         Movie(
             'Moon Light',
             'Moonlight is set in the impoverished Liberty City area of Miami, shown in brilliant, luminous colours, and takes place in three acts. In the first act, successful drug dealer Juan (played by Mahershala Ali) sees a young boy fleeing a group of boys threatening to beat him and follows the child into an abandoned apartment, into which he has locked himself for protection. The child (Alex Hibbert) refuses to speak but allows Juan to buy him a meal. Juan and his girlfriend, Teresa (Janelle Monáe), take him into their home, where the boy says that his name is Chiron and that he is called Little, but he refuses to say where he lives until the following morning. Juan returns him to his mother (Naomie Harris), a user of crack cocaine who is emotionally abusive to the child. Juan and Teresa become an alternate family for Chiron, who does not know how to fit in with the other boys in the neighbourhood, though a friend, Kevin (Jaden Piner), tries to teach him.',
-            'assets/images/movie1.jpg'),
+            'images/movie1.jpg'),
         Movie(
             'Joker',
             'In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.',
-            'assets/images/movie2.jpg'),
+            'images/movie2.jpg'),
         Movie(
             'Beauty & Beast',
             'A selfish Prince is cursed to become a monster for the rest of his life, unless he learns to fall in love with a beautiful young woman he keeps prisoner.',
-            'assets/images/movie3.jpg'),
+            'images/movie4.jpg'),
       ]),
     ];
   }
