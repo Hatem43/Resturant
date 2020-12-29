@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'registeration page.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         "Login": (BuildContext context) => LoginScreen(),
         "Signup": (BuildContext context) => SignupScreen(),
-        "Home": (BuildContext context) => CinemasPage(),
+        "Home": (BuildContext context) => Homepage()),
       },
     );
   }
