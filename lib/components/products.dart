@@ -67,8 +67,7 @@ class Single_Film extends StatelessWidget {
         child: Material(
           child: InkWell(
             onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CinemaPage()));
-            },
+              Navigator.of(context).push(MaterialPageRoute(builder:(context)=>CinemasPage());
             child: GridTile(
               child: Image.asset(film_picture,fit: BoxFit.cover,),
               footer: Container(
