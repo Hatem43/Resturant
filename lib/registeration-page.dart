@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'main.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -18,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<dynamic> onSubmit(context) async {
     //ToDo: Login b2a
-    Navigator.popAndPushNamed(context, 'Home');
+    Navigator.popAndPushNamed(context, MaterialPageroute ((context)=>Homepage ());
   }
 
   @override
