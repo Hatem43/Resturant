@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: CinemasPage(),
+      home: CinemaPage(),
       routes: <String, WidgetBuilder>{
         "Login": (BuildContext context) => LoginScreen(),
         "Signup": (BuildContext context) => SignupScreen(),
